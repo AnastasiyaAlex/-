@@ -1,0 +1,62 @@
+#!/usr/bin/python
+#_*_coding:utf-8-_*_
+
+from tkinter import Tk, Frame, BOTH
+from tkinter.ttk import Frame,Button,Style
+
+
+class Example(Frame):
+    def __init__(self,parent):
+        Frame.__init__(self,parent)
+        self.parent=parent
+        self.initUI()
+
+    def initUI(self):
+        self.parent.title("Кнопка выхода из приложения")
+        self.style = Style()
+        self.style.theme_use("default")
+
+        self.pack(fill=BOTH,expand=1)
+
+        quitButton=Button(self,text = "Если хочешь",command=self.quit)
+        quitButton.place(x=50,y=50)
+
+        quitButton = Button(self, text="Закрыть окно", command=self.quit)
+        quitButton.place(x=140, y=60)
+
+        quitButton = Button(self, text="То ", command=self.quit)
+        quitButton.place(x=250, y=70)
+
+        quitButton = Button(self, text="Следует", command=self.quit)
+        quitButton.place(x=340, y=80)
+
+        quitButton = Button(self, text="Нажать", command=self.quit)
+        quitButton.place(x=430, y=90)
+
+        quitButton = Button(self, text="На", command=self.quit)
+        quitButton.place(x=70, y=90)
+
+        quitButton = Button(self, text="Любое", command=self.quit)
+        quitButton.place(x=140, y=110)
+
+        quitButton = Button(self, text="Окошко", command=self.quit)
+        quitButton.place(x=210, y=130)
+
+        quitButton = Button(self, text="В данном ", command=self.quit)
+        quitButton.place(x=280, y=140)
+
+        quitButton = Button(self, text="Квадратике", command=self.quit)
+        quitButton.place(x=350, y=150)
+
+
+
+def main():
+  root = Tk()
+  root.geometry("550x450+300+300")
+  Example(root)
+  root.mainloop()
+
+
+if __name__ == '__main__':
+  main()
+
