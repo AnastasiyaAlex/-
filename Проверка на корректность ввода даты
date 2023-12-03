@@ -1,0 +1,60 @@
+import tkinter as tk
+
+def check_date(event):
+    day = day_entry.get()
+    month = month_entry.get()
+    year = year_entry.get()
+    try:
+        day = int(day)
+        month = int(month)
+        year = int(year)
+
+        if (month == 2) and (day > 28):
+            result_label.config(text="В феврале 28 дней!", bg="red")
+        elif (month == 4) and (day > 30):
+            result_label.config(text="В апреле 30 дней!", bg="red")
+        elif (month == 6) and (day > 30):
+            result_label.config(text="В июне 30 дней!", bg="red")
+        elif (month == 7) and (day > 30):
+            result_label.config(text="В июле 30 дней!", bg="red")
+        elif (month == 9) and (day > 30):
+            result_label.config(text="В сентябре 30 дней!", bg="red")
+        elif (month == 11) and (day > 30):
+            result_label.config(text="В ноябре 30 дней!", bg="red")
+        elif day < 1 or day > 31:
+            result_label.config(text="Некорректная дата!", bg="red")
+        elif month < 1 or month > 12:
+            result_label.config(text="Некорректный месяц!", bg="red")
+        elif year < 1 or year > 2023:
+            result_label.config(text="Такого года не существует!", bg="red")
+        else:
+            result_label.config(text="Дата корректна", bg="green")
+    except ValueError:
+        result_label.config(text="Ошибка! Все поля должны содержать цифры!", bg="red")
+
+root = tk.Tk()
+root.title("Ввод даты")
+
+day_label = tk.Label(root, text="Дата:")
+day_label.pack()
+day_entry = tk.Entry(root)
+day_entry.pack()
+
+month_label = tk.Label(root, text="Месяц:")
+month_label.pack()
+month_entry = tk.Entry(root)
+month_entry.pack()
+
+year_label = tk.Label(root, text="Год:")
+year_label.pack()
+year_entry = tk.Entry(root)
+year_entry.pack()
+
+result_label = tk.Label(root, text="")
+result_label.pack()
+
+day_entry.bind('<KeyRelease>', check_date)
+month_entry.bind('<KeyRelease>', check_date)
+year_entry.bind('<KeyRelease>', check_date)
+
+root.mainloop()
