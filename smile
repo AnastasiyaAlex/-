@@ -1,0 +1,62 @@
+# -*- coding: utf-8 -*-
+import turtle
+from turtle import *
+#
+reset()
+tracer(0)
+width(2)
+#
+up()
+x=0
+y=-100
+goto(x, y)
+begin_fill()
+color('#FF00FF')
+down()
+circle(100)
+end_fill()
+color('#DC143C')
+circle(100)
+up()
+#
+x=-45
+y=50
+goto(x, y)
+down()
+color('black')
+begin_fill()
+circle(7)
+up()
+end_fill()
+#
+x=45
+y=50
+goto(x, y)
+down()
+color('black')
+begin_fill()
+circle(7)
+up()
+end_fill()
+#
+x=-55
+y=-50
+goto(x, y)
+right(45)
+width(3)
+down()
+color('black')
+circle(80, 90)
+up()
+#
+x=0
+y=50
+goto(x, y)
+right(135)
+width(3)
+down()
+color('#000000')
+forward(100)
+up()
+#
+turtle.mainloop()
